@@ -1,3 +1,5 @@
+import display from './display';
+
 const weather = (() => {
   function errorHandler(err) {
     if (err.error.message) {
@@ -28,6 +30,9 @@ const weather = (() => {
         tempF: await weatherData.current.temp_f,
         windKPH: await weatherData.current.wind_kph,
       };
+
+      display.displayWeather(weatherInfo);
+      return { weatherInfo };
     } catch (err) {
       errorHandler(err);
     }

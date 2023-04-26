@@ -1,3 +1,8 @@
 import weather from './modules/weather';
 
-weather.getWeather('Oslo');
+const searchBtn = document.querySelector('.search');
+searchBtn.addEventListener('click', () => {
+  const inputText = document.querySelector('#location').value;
+  weather.getWeather(`${inputText}`);
+});
+// weather.getWeather('Oslo');

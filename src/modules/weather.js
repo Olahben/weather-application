@@ -28,7 +28,6 @@ const weather = (() => {
         lastUpdated: await weatherData.current.last_updated,
         tempC: await weatherData.current.temp_c,
         tempF: await weatherData.current.temp_f,
-        windKPH: await weatherData.current.wind_kph,
       };
 
       display.displayWeather(weatherInfo);

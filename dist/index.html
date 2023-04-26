@@ -9,10 +9,21 @@
 </head>
 <body>
     <div id="content">
-        <label for="location"></label>
-        <input type="text" placeholder="Enter location name" id="location" required>
+        <div class="form">
+            <label for="location"></label>
+            <input type="text" placeholder="Enter location name" id="location" required>
+            <button class="search">Search</button>
+        </div>
+        <div class="info">
+            <h2 class="location"></h2>
+            <div class="weather-info">
+                <span class="condition">Condition:</span>
+                <span class="feels-like">Feels like:</span>
+                <span class="last-updated">Last updated:</span>
+                <span class="temp"></span>
+            </div>
 
-        <button class="search">Search</button>
+        </div>
     </div>
 </body>
 </html>

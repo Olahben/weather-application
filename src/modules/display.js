@@ -18,15 +18,15 @@ const display = (() => {
 
   function displayWeather(infoObj) {
     const location = document.querySelector('h2');
-    location.textContent += `${infoObj.country}, ${infoObj.city}`;
+    location.textContent = `${infoObj.country}, ${infoObj.city}`;
     const condition = document.querySelector('.condition');
-    condition.textContent += `Condition: ${infoObj.condition}`;
+    condition.textContent = `Condition: ${infoObj.condition}`;
     const feelsLikeTemp = document.querySelector('.feels-like');
-    feelsLikeTemp.textContent += `Feels like: ${infoObj.feelsLikeC}C°`;
+    feelsLikeTemp.textContent = `Feels like: ${infoObj.feelsLikeC}C°`;
     const lastUpdated = document.querySelector('.last-updated');
-    lastUpdated.textContent += `Last updated: ${infoObj.lastUpdated}`;
+    lastUpdated.textContent = `Last updated: ${infoObj.lastUpdated}`;
     const temp = document.querySelector('.temp');
-    temp.textContent += `${infoObj.tempC}C°`;
+    temp.textContent = `${infoObj.tempC}C°`;
     toggleCelsiusFahrenheit(infoObj);
   }
 

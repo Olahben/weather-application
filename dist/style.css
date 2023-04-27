@@ -38,3 +38,26 @@ input#location {
   font-weight: 600;
   font-family: 'Alice', serif;
 }
+
+.info {
+  display: grid;
+  grid-template: 
+  'location'
+  'weather-info';
+  color: white;
+  justify-content: center;
+  align-items: center;
+}
+
+.location {
+    grid-area: location;
+    display: flex;
+    justify-content: center;
+}
+
+.weather-info {
+    grid-area: weather-info;
+    display: flex;
+    justify-content: center;
+    gap: 3%;
+}

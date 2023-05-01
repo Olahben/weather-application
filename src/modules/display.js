@@ -16,6 +16,27 @@ const display = (() => {
     }, 5000);
   }
 
+  async function displayCondition(infoObj) {
+    try {
+      const infoDiv = document.querySelector('.info');
+      const response = await fetch(
+        `https://api.unsplash.com/search/photos?query=${infoObj.condition}&per_page=20&client_id=JR8hfSgbMKYe_kG1JjYIwIoeRsGWp-F2MxA6Hjd1gs0`,
+        {
+          mode: 'cors',
+        },
+      );
+      const imgData = await response.json();
+      console.log(imgData);
+      const imgUrl = imgData.results[0].urls.regular;
+      const DOMImg = document.createElement('img');
+      DOMImg.src = imgUrl;
+      infoDiv.style.backgroundImage = `url(${imgUrl})`;
+      infoDiv.appendChild(DOMImg);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
   function displayWeather(infoObj) {
     const location = document.querySelector('h2');
     location.textContent = `${infoObj.country}, ${infoObj.city}`;
@@ -28,6 +49,7 @@ const display = (() => {
     const temp = document.querySelector('.temp');
     temp.textContent = `${infoObj.tempC}C°`;
     toggleCelsiusFahrenheit(infoObj);
+    displayCondition(infoObj);
   }
 
   return { displayWeather };

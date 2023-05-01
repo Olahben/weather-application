@@ -30,8 +30,10 @@ const display = (() => {
       const imgUrl = imgData.results[0].urls.regular;
       const DOMImg = document.createElement('img');
       DOMImg.src = imgUrl;
+      DOMImg.style.objectFit = 'cover';
       infoDiv.style.backgroundImage = `url(${imgUrl})`;
-      infoDiv.appendChild(DOMImg);
+      infoDiv.style.backgroundSize = 'cover';
+      infoDiv.style.backgroundSize = '100% 100%';
     } catch (err) {
       console.log(err);
     }
